@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>Data Catalogue Table</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Environment</th>
+    <th>DataSetId</th>
+  </tr>
+  {% for data in dataset_desc %}
+    <tr>
+      <td>
+        <a href="{% url 'tabview' name=data.name env=data.environment_type %}">
+          {{ data.name }}
+        </a>
+   </td>
+      <td>{{ data.desc }}</td>
+      <td>{{ data.environment_type }}</td>
+      <td>{{ data.dataid }}</td>
+    </tr>
+  {% endfor %}
+  
+</table>
+
+
+</body>
+</html>
+

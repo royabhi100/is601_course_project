@@ -1,0 +1,23 @@
+{% extends 'data_catalogue/base.html' %}
+
+{% load socialaccount %}
+
+
+{% load static %}
+
+
+{% block title %}Welcome!{% endblock %}
+
+{% block content %}
+
+<p>Authentication successfull</p>
+{% if user.is_authenticated %}
+    <h1>Welcome {{ user.username }} !!!</h1>
+{% else %}
+    <a href="{% provider_login_url 'github' %}">Sign Up</a>
+{% endif %}
+
+<a href="{% url 'dataview' %}">
+    <img src="{% static 'data_catalogue/DataCatalogueWelcomePicture.JPG' %}" alt="Welcome">
+</a>
+{% endblock %}

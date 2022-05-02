@@ -1,0 +1,15 @@
+
+{% extends 'data_catalogue/base.html' %}
+
+
+{% block title %}Query Data Item{% endblock %}
+
+{% block content %}
+<p>Please use the following form to query Tables descriptions in different environment</p>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

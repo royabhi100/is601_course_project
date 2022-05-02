@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>Order Table</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>OrderId</th>
+    <th>Ticker</th>
+    <th>Environment</th>
+    <th>Price</th>
+    <th>Size</th>
+    <th>State</th>
+
+  </tr>
+  {% for data in orders %}
+    <tr>
+      <td>{{ data.orderid }}</td>
+      <td>{{ data.ticker }}</td>
+      <td>{{ data.environment_type }}</td>
+      <td>{{ data.price }}</td>
+      <td>{{ data.size }}</td>
+      <td>{{ data.state }}</td>
+
+    </tr>
+  {% endfor %}
+  
+</table>
+
+
+</body>
+</html>
+
